@@ -36,7 +36,7 @@ function WorkOrders() {
     //Returns the form.
     return(
       <form >
-          <input type="text" name="qs" placeholder={demoQueryString} />
+          <input type="text" name="qs" placeholder={`q=details.projectId: ${environment.projectId}`} />
           <input type="submit" value="Apply query" onClick={addQueryString}/>
       </form>
     )
@@ -154,6 +154,7 @@ function WorkOrders() {
             {environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/{environment.projectId}/workorders?{demoQueryString}
           </code>
           <p>Return a list of WorkOrders for a project to which the authorized user has access. Implemented via workorders/services/services.js</p>
+          <p>Must contain at least one details.projectId, e.g. q=details.projectId:VNw2rUazVzc</p>
           <p>Query strings may also be appended to the API request, to filter or sort the data. E.g. {demoQueryString} or {demoQueryString2}</p>
           <a href={apiDocs}>Click here to view the API docs.</a>
           <h3>Payload response:</h3>
