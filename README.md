@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
-This project is a basic and lightweight application, designed to showcase potential usage of the Work Orders and Tasks API.
+This project is a basic and lightweight application, designed to showcase potential usage of the Work Orders and Tasks API. 
+For examples of API request implementions, see either  src/app/tasks/services/services.js or src/app/workorders/services/services.js.
+
+To see implementations of the payload responses in a UI, see either src/app/tasks/tasks.js or src/app/workorders/workorders.js.
 
 ## Getting started
 This project can be initiated by running the command **npm install** followed by **npm start**.

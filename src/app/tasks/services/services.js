@@ -16,18 +16,19 @@ export const getTasks = async(projectId, queryString) => {
     const qs = queryString? queryString : `q=projectId:${projectId}`;
     const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/tasks?${qs}`);
 
-    if(environment.useAuth){
-        const response = await fetch(url.href, {
-            headers: {
-                Authorization: `Bearer ${getToken()}`,
-            },
-        });
-        const data = await response.json();
-        return data
-    }
-    else{
+    //Returns mocked data in the event that the user is not authenticated. In a real usage scenario this would be ommitted.
+    if(!environment.useAuth){
         return getTasksMockResponse;
     }
+    
+    const response = await fetch(url.href, {
+        headers: {
+            Authorization: `Bearer ${getToken()}`,
+        },
+    });
+    const data = await response.json();
+    return data
+
 }
 
 export const createTask = async(projectId, body) => {

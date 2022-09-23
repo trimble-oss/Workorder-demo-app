@@ -157,7 +157,7 @@ function Tasks() {
         <div className="example-code">
           <h3>Example usage:</h3>
           <code>
-            {environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/${environment.projectId}/tasks?{demoQueryString}
+            {environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/tasks?q=projectId:{environment.projectId}
           </code>
           <p>Return a list of Tasks for a project to which the authorized user has access. Implemented via tasks/services/services.js</p>
           <p>Must contain at least one projectId, e.g. q=projectId:VNw2rUazVzc</p>
