@@ -151,7 +151,7 @@ function WorkOrders() {
         <div className="example-code">
           <h3>Example usage:</h3>
           <code>
-            {environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/{environment.projectId}/workorders?{demoQueryString}
+            {environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/workorders?q=details.projectId:{environment.projectId}
           </code>
           <p>Return a list of WorkOrders for a project to which the authorized user has access. Implemented via workorders/services/services.js</p>
           <p>Must contain at least one details.projectId, e.g. q=details.projectId:VNw2rUazVzc</p>
