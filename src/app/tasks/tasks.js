@@ -38,7 +38,7 @@ function Tasks() {
       //Returns the form itself.
       return(
         <form >
-            <input type="text" name="qs" placeholder={demoQueryString} />
+            <input type="text" name="qs" placeholder={`q=projectId: ${environment.projectId}`} />
             <input type="submit" value="Apply query" onClick={addQueryString}/>
         </form>
       )
@@ -54,6 +54,7 @@ function Tasks() {
               "name" : e.target.form[0].value,
               "taskTypeName" : e.target.form[1].value,
               "workOrderId" : e.target.form[2].value,
+              "projectId" : e.target.form[3].value,
             }
           }
           //Create the new Work Order via an api call.
@@ -72,7 +73,8 @@ function Tasks() {
           <form>
               <label><span>Task Name: </span><input type="text"  name="taskName"/></label> 
               <label><span>Task Type Name: </span><input type="text" disabled={true} value="BASIC_COMPACTION" name="taskType"/> </label> 
-              <label><span>Work Order Id: </span><input type="text" name="taskType"/> </label> 
+              <label><span>Work Order Id: </span><input type="text" name="woid"/> </label> 
+              <label><span>Project Id: </span><input type="text" disabled={true} value={environment.projectId} name="projid"/> </label> 
 
               <input type="submit" value="Submit" onClick={submitForm}/>
           </form>
@@ -158,6 +160,7 @@ function Tasks() {
             {environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/${environment.projectId}/tasks?{demoQueryString}
           </code>
           <p>Return a list of Tasks for a project to which the authorized user has access. Implemented via tasks/services/services.js</p>
+          <p>Must contain at least one projectId, e.g. q=projectId:VNw2rUazVzc</p>
           <p>Query strings may also be appended to the API request, to filter or sort the data. E.g. {demoQueryString} or {demoQueryString2}</p>
           <a href={apiDocs}>Click here to view the API docs.</a>
           <h3>Payload response:</h3>

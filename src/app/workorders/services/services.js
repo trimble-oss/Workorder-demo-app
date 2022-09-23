@@ -13,8 +13,9 @@ import { getToken } from "../../auth/services/auth.service";
 
 export const getWorkOrders = async(projectId, queryString) => {
 
-    const qs = queryString? queryString : "";
-    const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/${projectId}/workorders?${qs}`);
+    const qs = queryString ? queryString : `q=details.projectId:${projectId}`;
+
+    const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/workorders?${qs}`);
 
     //Returns mocked data in the event that the user is not authenticated. In a real usage scenario this would be ommitted.
     if(!environment.useAuth){
@@ -33,7 +34,7 @@ export const getWorkOrders = async(projectId, queryString) => {
 
 
 export const createWorkOrder = async(projectId, body) => {
-    const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/${projectId}/workorders`)
+    const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/workorders`)
 
     
     const response = await fetch(url, {

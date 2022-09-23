@@ -13,8 +13,8 @@ import { getToken } from "../../auth/services/auth.service";
 
 export const getTasks = async(projectId, queryString) => {
 
-    const qs = queryString? queryString : "";
-    const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/${projectId}/tasks?${qs}`);
+    const qs = queryString? queryString : `q=projectId:${projectId}`;
+    const url = new URL(`${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/tasks?${qs}`);
 
     if(environment.useAuth){
         const response = await fetch(url.href, {
@@ -31,7 +31,7 @@ export const getTasks = async(projectId, queryString) => {
 }
 
 export const createTask = async(projectId, body) => {
-    const url = `${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/projects/${projectId}/tasks`;
+    const url = `${environment.trimbleCloudApiUrl}/construction/field-factory/workorders/v1/tasks`;
 
     const response = await fetch(url, {
         method: 'POST',
