@@ -1,0 +1,65 @@
+table, th, td {
+  width: fit-content;
+  border: 1px solid;
+  margin-bottom: 10px;
+}
+input[type=text]{
+  /* margin-top: 10px; */
+  width: 500px;
+}
+
+.loginbanner{
+  background-color: powderblue;
+}
+
+.example-code{
+  width:50%
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  /* margin-bottom: 55px; */
+}
+
+.flex-container > div {
+  margin-right: 10px;
+}
+
+.left{
+  /* flex-grow: 1; */
+  width: 50%;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.fetchedData{
+  color: black;
+  background-color: mintcream;
+  border: 1px ridge;
+  min-height: 50px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+
+label {
+  display:block;
+  position:relative;
+  padding-left:140px;
+}
+label > span {
+  position:absolute;
+  left:0;
+}
+
+.divider{
+  border-style: ridge;
+}
+
