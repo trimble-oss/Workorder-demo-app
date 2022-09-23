@@ -3,7 +3,7 @@
 This project is a basic and lightweight application, designed to showcase potential usage of the Work Orders and Tasks API.
 
 ## Getting started
-This project can be initiated by running the command **npm start**.
+This project can be initiated by running the command **npm install** followed by **npm start**.
 
 ## Mocked data
 
