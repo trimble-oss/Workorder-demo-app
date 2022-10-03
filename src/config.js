@@ -1,9 +1,9 @@
 export const environment = {
 
-    useAuth: true,
+    useAuth: false,
 
     //Specify a Connected Project ID. This will be used in subsequent API calls when fetching WorkOrders and Tasks
-    projectId:'LHA-9S10REc',
+    projectId:'',
 
 
     //Used for the API calls.
