@@ -36,7 +36,7 @@ function WorkOrders() {
     //Returns the form.
     return(
       <form >
-          <input type="text" name="qs" placeholder={`q=details.projectId: ${environment.projectId}`} />
+          <input type="text" name="qs" defaultValue={`q=details.projectId:${environment.projectId}`} />
           <input type="submit" value="Apply query" onClick={addQueryString}/>
       </form>
     )
