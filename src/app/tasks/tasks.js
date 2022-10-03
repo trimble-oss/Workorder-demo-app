@@ -38,7 +38,7 @@ function Tasks() {
       //Returns the form itself.
       return(
         <form >
-            <input type="text" name="qs" placeholder={`q=projectId: ${environment.projectId}`} />
+            <input type="text" name="qs" defaultValue={`q=projectId:${environment.projectId}`} />
             <input type="submit" value="Apply query" onClick={addQueryString}/>
         </form>
       )
@@ -93,7 +93,7 @@ function Tasks() {
               <tr>
                   <th>name</th>
                   <th>status</th>
-                  <th>resource name</th>
+                  <th>asset name</th>
                   <th>work order name</th>
                   <th>task type name</th>
               </tr>

@@ -1,4 +1,5 @@
-const { createHash } = require('crypto');
+// const { createHash } = require('crypto');
+import * as shajs from 'sha.js/sha256';
 
 function makeid(length: number) {  
   let result = '';
@@ -15,7 +16,7 @@ export const getPkce = (): { verifier: string; challenge: string } => {
   const id = makeid(43); //Must be min. of 43.
   return {
     verifier: id,
-    challenge: createHash('sha256')
+    challenge: new shajs('sha256')
       .update(id)
       .digest('base64')
       .replace(/=/g, "")
